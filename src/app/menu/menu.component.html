@@ -1,0 +1,26 @@
+<!-- menu.component.html -->
+<div class="container">
+    <div class="sidenav" [ngClass]="{'sidebar-closed': isSidebarOpen}">
+      <p class="logo">
+        <img src="../../assets/icons/logo.png" alt="logo"/>
+      </p>
+      <nav>
+        <ul>
+          <li class="menu" (click)="handleSidebarToggle()">
+            <div class="menu-item-container">
+              <img  src="../../assets/icons/chevron-left.svg" alt="back_icon" srcset="">
+              <span>Back</span>
+            </div>
+          </li>
+          <app-menu-item
+            [openSideBar]="openSideBar"
+            *ngFor="let menuItem of menuItems"
+            [item]="menuItem"
+            [menuItems]="menuItems"
+          ></app-menu-item>
+        </ul>
+      </nav>
+    </div>
+    <div class="sidenav-content">Main content</div>
+  </div>
+  

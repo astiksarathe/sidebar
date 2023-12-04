@@ -1,0 +1,23 @@
+<ng-container *ngIf="item.submenu">
+  <li class="has-submenu">
+    <div class="menu-item-container" (click)="toggleSubMenu()">
+      <img *ngIf="item.icon" [src]="item.icon" alt="" srcset="" />
+      <a [routerLink]="item.path" routerLinkActive="active-link">{{ item.title }}</a>
+      <img class="submenu-option-icon"
+        [src]="item.showSubMenu ? '../../assets/icons/Component 410 – 1.svg' : '../../assets/icons/Component 410 – 1-2.svg'"
+        alt="">
+    </div>
+    <ul class="sub-menu" [ngClass]="{ expanded: item.showSubMenu }">
+      <app-menu-item *ngFor="let subItem of item.submenu" [openSideBar]="openSideBar" [item]="subItem"
+        [menuItems]="menuItems"></app-menu-item>
+    </ul>
+  </li>
+</ng-container>
+<ng-container *ngIf="!item.submenu">
+  <li class="menu" (click)="openSideBar()">
+    <div class="menu-item-container">
+      <img *ngIf="item.icon" [src]="item.icon" alt="" srcset="" />
+      <a [routerLink]="item.path" routerLinkActive="active-link">{{ item.title }}</a>
+    </div>
+  </li>
+</ng-container>

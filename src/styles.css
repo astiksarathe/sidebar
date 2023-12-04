@@ -1,0 +1,63 @@
+/* Global Styles */
+
+* {
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #616161;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+}
+
+.sub-menu>app-menu-item>li:has(ul.expanded) {
+  border-width: 1px;
+  border-image: linear-gradient(to bottom,
+      #616161 20px,
+      transparent 20px,
+      transparent 100%);
+  border-image-slice: 1;
+}
+
+.sub-menu>app-menu-item:has(li > ul.expanded)+app-menu-item>li {
+  border-width: 1px;
+  border-image: linear-gradient(to bottom,
+      transparent 20px,
+      #616161 20px,
+      #616161 100%);
+  border-image-slice: 1;
+}
+
+.sub-menu>app-menu-item:has(.has-submenu > .expanded)+app-menu-item>.has-submenu:has(.expanded) {
+  border-left: none;
+}
+
+.menu {
+  color: #000000;
+}
+
+
+.sidenav>nav>ul>app-menu-item>li>ul {
+  padding-left: 55px;
+}
+
+
+.sidenav>nav>ul>app-menu-item>li>.menu-item-container:hover{
+  background-color: rgb(102, 184, 70,0.1);
+}
+.sidenav>nav>ul>app-menu-item>li>.menu-item-container:has(.active-link){
+  /* background-color: rgb(102, 184, 70,0.1); */
+}
+
+.active-link{
+  color: #000000;
+}
+
+.sidebar-closed>nav>ul>app-menu-item>li>.menu-item-container:hover {
+  background-color: rgb(102, 184, 70,0.1);
+  color: #000000;
+  border-top-right-radius: 35%;
+  border-bottom-right-radius: 35%; 
+}
