@@ -7,7 +7,7 @@ ul {
 li {
   padding: 6px 0px 6px 0px;
   position: relative;
-  color: #000000;
+  color: rgb(0, 0, 0,0.6);
 }
 
 .expanded {
@@ -15,10 +15,6 @@ li {
   transition: 0.3s ease, width 0.3s ease;
 }
 
-/* .has-submenu:has(.expanded)> .menu-item-container{
-  background: rgb(103, 185, 70, 0.1);
-  color: #000000;
-} */
 .expanded>app-menu-item>li {
   padding: 6px 0px 6px 18px;
 }
@@ -29,13 +25,13 @@ li {
 }
 
 li>ul>app-menu-item>li {
-  border-left: 1px solid #616161;
+  border-left: 1px solid rgb(0, 0, 0,0.6);
 }
 
 li>ul>app-menu-item>li::before {
   content: ' ';
   position: absolute;
-  border-top: 1px solid #616161;
+  border-top: 1px solid rgb(0, 0, 0,0.6);
   width: 10px;
   top: 20px;
   left: 0px;
@@ -47,13 +43,9 @@ li>ul>app-menu-item>li::before {
   height: 36px;
   cursor: pointer;
   align-items: center;
-  color: #000000;
+  color: rgb(0, 0, 0,0.6);
   position: relative;
   overflow: hidden;
-}
-
-.menu-item-container>a {
-  text-decoration: none;
 }
 
 .menu-item-container>.submenu-option-icon {
@@ -62,31 +54,18 @@ li>ul>app-menu-item>li::before {
 
 .menu-item-container>img {
   margin: 16px;
-  color: #000000;
+  color: rgb(0, 0, 0,0.6);
 }
 
 .has-submenu>ul>app-menu-item:last-child>li {
   border-width: 1px;
   border-image: linear-gradient(to bottom,
-      #616161 20px,
+      rgb(0, 0, 0,0.6) 20px,
       transparent 20px,
       transparent 100%);
   border-image-slice: 1;
 }
 
-.active-link {
-  /* background-color: #616161; */
+.active-link{
+  color: black;
 }
-/* 
-.menu-item-container {
-  background: rgb(103, 185, 70, 0.1);
-  color: #000000;
-  
-}
-
-.menu-item-container:hover{
-  background: rgb(103, 185, 70, 0.1);
-  color: #000000;
-  border-top-right-radius: 35%;
-  border-bottom-right-radius: 35%; 
-}*/

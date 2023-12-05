@@ -1,36 +1,39 @@
 import { Component } from '@angular/core';
 import { MenuItemComponent } from "../menu-item/menu-item.component";
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css',
-  imports: [MenuItemComponent, CommonModule]
+  imports: [RouterOutlet, MenuItemComponent, CommonModule]
 })
 export class MenuComponent {
   isSidebarOpen = true;
   menuItems = [
-    { title: 'Scores', icon: "../../assets/icons/speedometer.svg", path:"/scores" },
-    { title: 'Inbox', icon: "../../assets/icons/inbox.svg", path:"/inbox" },
-    { title: 'Engagement', icon: "../../assets/icons/Component 437 – 1.svg",path:"/engagement" },
+    { title: 'Scores', icon: "../../assets/icons/speedometer.svg", path: "/scores" },
+    { title: 'Inbox', icon: "../../assets/icons/inbox.svg", path: "/inbox" },
+    { title: 'Engagement', icon: "../../assets/icons/Component 437 – 1.svg", path: "/engagement" },
     {
       title: 'Admin',
       icon: "../../assets/icons/admin.svg",
+      path: '/admin',
       submenu: [
-        { title: 'General (account)',  path:"/x"  },
-        { title: 'Projects',  path:"/x"  },
+        { title: 'General (account)', path: "/general" },
+        { title: 'Projects', path: "/project" },
         {
           title: 'Sub account',
+          path: '/admin/sub-accounts',
           submenu: [
-            { title: 'Notifications',  path:"/x"  },
+            { title: 'Notifications', path: "/admin/sub-accounts/notification" },
           ],
         },
-        { title: 'User access',  path:"/x"  },
-        { title: 'Configure dashboard',  path:"/x"  },
-        { title: 'Security',  path:"/x"  },
-        { title: 'Notification',  path:"/x"  },
+        { title: 'User access', path: "/admin/sub-accounts/user-access" },
+        { title: 'Configure dashboard', path: "/admin/sub-accounts/configure-dashboard" },
+        { title: 'Security', path: "/admin/sub-accounts/security" },
+        { title: 'Notification', path: "/admin/notification" },
       ],
     },
   ];
