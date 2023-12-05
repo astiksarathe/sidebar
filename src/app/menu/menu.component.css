@@ -6,11 +6,11 @@
 
 .sidenav {
   width: 280px;
-  color: black;
+  color: rgb(0, 0, 0,0.6);
   padding: 6px 0px 6px 0px;
   box-sizing: border-box;
   background: #FFFFFF 0% 0% no-repeat padding-box;
-  box-shadow: 3px 10px 20px #0000004D;
+  box-shadow: 3px 10px 20px rgb(0, 0, 0,0.6);
   transition: left 0.3s ease, width 0.3s ease;
 }
 
@@ -50,14 +50,14 @@ ul {
 }
 
 .menu {
-  color: #000000;
+  color: rgb(0, 0, 0,0.6);
 }
 
 
 li {
   padding: 6px 0px 6px 0px;
   position: relative;
-  color: #000000;
+  color: rgb(0, 0, 0,0.6);
 }
 
 .menu-item-container {
@@ -66,14 +66,14 @@ li {
   height: 36px;
   cursor: pointer;
   align-items: center;
-  color: #000000;
+  color: rgb(0, 0, 0,0.6);
   position: relative;
 }
 
 
 .menu-item-container>img {
   margin: 16px;
-  color: #000000;
+  color: rgb(0, 0, 0,0.6);
 }
 
 .logo>img {
