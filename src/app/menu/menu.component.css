@@ -1,11 +1,13 @@
 .container {
   display: flex;
-  min-height: 100vh;
   overflow: hidden;
 }
 
 .sidenav {
   width: 280px;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
   color: rgb(0, 0, 0,0.6);
   padding: 6px 0px 6px 0px;
   box-sizing: border-box;
@@ -14,10 +16,23 @@
   transition: left 0.3s ease, width 0.3s ease;
 }
 
+/* Scroll bar class */
+
+.sidenav::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: white;
+}
+
+.sidenav::-webkit-scrollbar-thumb
+{
+	background-color: rgb(0, 0, 0,0.6);;
+}
+
 .sidebar-closed {
   width: 55px;
   background: #f5f5f5;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .sidenav nav {
