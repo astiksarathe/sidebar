@@ -13,10 +13,12 @@
             </div>
           </li>
           <app-menu-item
+            [isMainMenu]=true
             [openSideBar]="openSideBar"
             *ngFor="let menuItem of menuItems"
             [item]="menuItem"
             [menuItems]="menuItems"
+            [isSidebarOpen]="isSidebarOpen"
           ></app-menu-item>
         </ul>
       </nav>
@@ -25,4 +27,3 @@
       <router-outlet></router-outlet>
     </div>
   </div>
-  
