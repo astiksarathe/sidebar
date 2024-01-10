@@ -1,13 +1,12 @@
-ul {
+.sub-menu {
   list-style-type: none;
   display: none;
-  /* padding: 0; */
 }
 
-li {
+.menu-item {
   padding: 6px 0px 6px 0px;
   position: relative;
-  color: rgb(0, 0, 0,0.6);
+  color: rgb(0, 0, 0, 0.6);
 }
 
 .expanded {
@@ -15,23 +14,23 @@ li {
   transition: 0.3s ease, width 0.3s ease;
 }
 
-.expanded>app-menu-item>li {
+.expanded > app-menu-item > .menu-item {
   padding: 6px 0px 6px 18px;
 }
 
-.expanded>app-menu-item>li>ul {
+.expanded > app-menu-item > .menu-item > .sub-menu {
   margin-left: 0px;
   padding-left: 0;
 }
 
-li>ul>app-menu-item>li {
-  border-left: 1px solid rgb(0, 0, 0,0.6);
+.menu-item > .sub-menu > app-menu-item > .menu-item {
+  border-left: 1px solid rgb(0, 0, 0, 0.6);
 }
 
-li>ul>app-menu-item>li::before {
-  content: ' ';
+.menu-item > .sub-menu > app-menu-item > .menu-item::before {
+  content: " ";
   position: absolute;
-  border-top: 1px solid rgb(0, 0, 0,0.6);
+  border-top: 1px solid rgb(0, 0, 0, 0.6);
   width: 10px;
   top: 20px;
   left: 0px;
@@ -43,33 +42,34 @@ li>ul>app-menu-item>li::before {
   height: 36px;
   cursor: pointer;
   align-items: center;
-  color: rgb(0, 0, 0,0.6);
+  color: rgb(0, 0, 0, 0.6);
   position: relative;
   overflow: hidden;
 }
 
-.menu-item-container>.submenu-option-icon {
+.menu-item-container > .submenu-option-icon {
   margin-left: auto;
 }
 
-.menu-item-container>img {
+.menu-item-container > img {
   margin: 16px;
-  color: rgb(0, 0, 0,0.6);
+  color: rgb(0, 0, 0, 0.6);
 }
 
-.has-submenu>ul>app-menu-item:last-child>li {
+.has-submenu > .sub-menu > app-menu-item:last-child > .menu-item {
   border-width: 1px;
-  border-image: linear-gradient(to bottom,
-      rgb(0, 0, 0,0.6) 20px,
-      transparent 20px,
-      transparent 100%);
+  border-image: linear-gradient(
+    to bottom,
+    rgb(0, 0, 0, 0.6) 20px,
+    transparent 20px,
+    transparent 100%
+  );
   border-image-slice: 1;
 }
 
-.active-link{
+.active-link {
   color: black;
 }
-
 
 .closed > .menu-item-container.active-link,
 .closed > .menu-item-container:hover {
@@ -79,35 +79,45 @@ li>ul>app-menu-item>li::before {
   border-bottom-right-radius: 35%;
 }
 
-.sub-menu>app-menu-item>li:has(ul.expanded) {
+.sub-menu > app-menu-item > .menu-item:has(.sub-menu.expanded) {
   border-width: 1px;
-  border-image: linear-gradient(to bottom,
-      rgb(0, 0, 0, 0.6) 20px,
-      transparent 20px,
-      transparent 100%);
+  border-image: linear-gradient(
+    to bottom,
+    rgb(0, 0, 0, 0.6) 20px,
+    transparent 20px,
+    transparent 100%
+  );
   border-image-slice: 1;
 }
 
-.sub-menu>app-menu-item:has(li > ul.expanded)+app-menu-item>li {
+.sub-menu
+  > app-menu-item:has(.menu-item > .sub-menu.expanded)
+  + app-menu-item
+  > .menu-item {
   border-width: 1px;
-  border-image: linear-gradient(to bottom,
-      transparent 20px,
-      rgb(0, 0, 0, 0.6) 20px,
-      rgb(0, 0, 0, 0.6) 100%);
+  border-image: linear-gradient(
+    to bottom,
+    transparent 20px,
+    rgb(0, 0, 0, 0.6) 20px,
+    rgb(0, 0, 0, 0.6) 100%
+  );
   border-image-slice: 1;
 }
 
-.sub-menu>app-menu-item:has(.has-submenu > .expanded)+app-menu-item>.has-submenu:has(.expanded) {
+.sub-menu
+  > app-menu-item:has(.has-submenu > .expanded)
+  + app-menu-item
+  > .has-submenu:has(.expanded) {
   border-left: none;
 }
 
-.menu-item-container:hover>span,
-.active-link>span,
-.menu-item-container:hover>span {
-  color: #000000
+.menu-item-container:hover > span,
+.active-link > span,
+.menu-item-container:hover > span {
+  color: #000000;
 }
 
-li>ul {
+.menu-item > .sub-menu {
   padding-left: 55px;
 }
 .main-menu:hover,

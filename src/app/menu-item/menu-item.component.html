@@ -1,5 +1,5 @@
 <ng-container *ngIf="item.submenu">
-  <li class="has-submenu" [ngClass]="{'closed': isSidebarOpen}">
+  <li class="menu-item has-submenu" [ngClass]="{'closed': isSidebarOpen}">
     <div class="menu-item-container" [ngClass]="{'main-menu': isMainMenu}" [routerLink]="item.path" routerLinkActive="active-link" (click)="toggleSubMenu()">
       <img *ngIf="item.icon" [src]="item.icon" alt="" srcset="" />
       <span>{{ item.title }}</span>
@@ -14,7 +14,7 @@
   </li>
 </ng-container>
 <ng-container *ngIf="!item.submenu">
-  <li class="menu" (click)="openSideBar()" [ngClass]="{'closed': isSidebarOpen}">
+  <li class="menu-item menu" (click)="openSideBar()" [ngClass]="{'closed': isSidebarOpen}">
     <div class="menu-item-container" [ngClass]="{'main-menu': isMainMenu}" [routerLink]="item.path" routerLinkActive="active-link">
       <img *ngIf="item.icon" [src]="item.icon" alt="" srcset="" />
       <span>{{ item.title }}</span>
